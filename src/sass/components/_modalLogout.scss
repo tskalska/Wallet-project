@@ -1,0 +1,115 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+.modal-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 30px;
+
+  background-color: var(--white);
+  border-radius: 20px;
+
+  @media screen and (max-width: 479.99px) {
+      width: 100vw;
+  height: 100vh;
+  }
+
+    @media screen and (min-width: 480px) {
+      width: 50vw;
+      height: 50vh;
+    }
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    height: 200px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 550px;
+    height: 150px;
+  }
+}
+.modal-logout-text {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 767px) {
+    margin-bottom: 20px;
+  }
+}
+.btn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+.btn-item:first-child {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 30px;
+  }
+}
+.btn-logout {
+  width: 230px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  background-color: var(--white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    width: 190px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 200px;
+  }
+}
+.btn-yes {
+  color: var(--accentGreenColor);
+  border: 1px solid var(--accentGreenColor);
+}
+.btn-no {
+  color: var(--accentRoseColor);
+  border: 1px solid var(--accentRoseColor);
+}
+.btn-yes:hover,
+.btn-yes:focus {
+  background-color: var(--accentGreenColor);
+  border: 1px solid var(--accentGreenColor);
+  color: var(--white);
+}
+.btn-no:hover,
+.btn-no:focus {
+  background-color: var(--accentRoseColor);
+  border: 1px solid var(--accentRoseColor);
+  color: var(--white);
+}

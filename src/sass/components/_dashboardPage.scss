@@ -1,0 +1,130 @@
+.dashboardPageContainer{
+    height: 100%;
+    min-height:calc(100vh - 80px);
+
+    background: #E7EAF2;
+    // background-size: cover;
+    // background-attachment: fixed;
+
+@media screen and (min-width: 768px) {
+
+    background-image: url(/public/image/table/BackGroudEllipseBlueTable@1x.png), url(/public/image/table/BackGroudEllipsePinkTable@1x.png);
+    background-size: 510px auto, 365px auto;
+    background-position: bottom, top;
+    background-position-x: 0%, 100%;
+    background-position-y: 100%, 0%;
+    background-repeat: no-repeat;
+}
+        
+@media screen and (min-width: 1280px) {
+
+    background-image: url(/public/image/desktop/BackGroudEllipseBlueDesktop@1x.png), url(/public/image/desktop/BackGroudEllipsePinkDesktop@1x.png);
+    background-size: 490px auto, 550px auto;
+    background-position: bottom, top;
+    background-position-x: 0%, 100%;
+    background-position-y: 100%, 0%;
+    background-repeat: no-repeat;
+}
+        
+@media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        
+@media screen and (min-width: 768px) {
+
+    background-image: url(/public/image/table/BackGroudEllipseBlueTable@2x.png), url(/public/image/table/BackGroudEllipsePinkTable@2x.png);
+    background-size: 510px auto, 365px auto;
+    background-position: bottom, top;
+    background-position-x: 0%, 100%;
+    background-position-y: 100%, 0%;
+    background-repeat: no-repeat;
+}
+        
+@media screen and (min-width: 1280px) {
+
+    background-image: url(/public/image/desktop/BackGroudEllipseBlueDesktop@2x.png), url(/public/image/desktop/BackGroudEllipsePinkDesktop@2x.png);
+    background-size: 490px auto, 550px auto;
+    background-position: bottom, top;
+    background-position-x: 0%, 100%;
+    background-position-y: 100%, 0%;
+    background-repeat: no-repeat;
+  }
+ }
+}
+
+.dashboardPageWrap{
+    height: 100%;
+    min-height:calc(100vh - 80px);
+
+    border:none;
+    
+@media screen and (max-width: 767px) {
+    padding-bottom: 50px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px);
+    // background-size: cover;
+    // background-attachment: fixed;
+}
+
+@media screen and (min-width: 768px) {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px);
+}
+
+@media screen and (min-width: 1280px) {
+    display: flex;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px);
+}
+}
+
+.layoutContainer {
+@media screen and (min-width: 1280px){
+    display:flex;
+    margin-top: 45px;
+    padding-left: 18px;
+    padding-right: 18px;
+} 
+}
+
+.dashboardPageSidebar{
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px 20px;
+}
+
+@media screen and (min-width: 1280px) {
+    padding-right: 69px;
+    padding-bottom: 20px;
+
+    border-right: 1px solid #E7E5F2;
+}
+}
+
+.dashboardPageIner{
+@media screen and (max-width: 767px) {
+   padding: 15px 0px 32px 0px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-right: 30px;
+}
+
+}
+
+.dashboardPageMain{
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+    height: 100%;
+    
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 704px;
+}
+    
+@media screen and (min-width: 1280px) {
+    width: 715px;
+    margin-left: 65px;
+}
+}

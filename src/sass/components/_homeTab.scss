@@ -1,0 +1,228 @@
+// table, td, th, tr {
+//     border-bottom: 1px solid #DCDCDF;
+//     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+// }
+
+.mobilehidden {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileOnly {
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.tableContainer {
+  width: 715px;
+  color: #000000;
+  border-collapse: collapse;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 704px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 704px;
+  }
+}
+
+.tableHeader {  
+  width: 715px;
+
+  height: 58px;
+  left: 549px;
+  top: 126px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+
+  border-radius: 30px;
+  text-align: center;
+  // border-bottom: 1px solid #dcdcdf;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+
+  th:nth-child(1) {
+    text-align: left;
+  }
+  th:nth-child(6) {
+    padding-right: 10px;
+  }
+
+  overflow-y: auto;
+
+  th {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.tabelHeader_item {
+
+  &:first-child {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding-left: 20px;
+  }
+  &:last-child {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: var(--mainFont);
+
+    &:first-child {
+      border-top-left-radius: 0px;
+    }
+    &:first-child {
+      border-bottom-left-radius: 0px;
+    }
+    &:last-child {
+      border-top-right-radius: 0px;
+    }
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+}
+
+.tableRow_item {
+  height: 52px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  // width: 715px;
+
+  border-bottom: 1px solid #dcdcdf;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+  text-align: center;
+
+  td:nth-child(1) {
+    padding-left: 20px;
+    text-align: start;
+  }
+}
+
+.table_value {
+  font-family: var(--mainFont);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.transactionIncomeFalse {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FF6596;
+}
+
+.transactionIncomeTrue{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #24CCA7;
+}
+
+.transactionCard {
+
+  background: #ffffff;
+  border-radius: 10px;
+  width: 280px;
+  height: 282px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  line-height: 18px;
+
+  .transactionCardTable {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+  }
+
+  th {
+    text-align: left;
+    height: 40px;
+    border-bottom: 1px solid #dcdcdf;
+  }
+  td {
+    text-align: right;
+    height: 40px;
+    border-bottom: 1px solid #dcdcdf;
+    font-family: var(--mainFont);
+
+  }
+
+  .last-item {
+    border-bottom: none;
+  }
+}
+
+.transactionCardRaw {
+  font-family: var(--mainFont);
+  font-style: normal;
+  max-height: 40px;
+}
+
+.transactionCardTrue {
+    border-left: 5px solid #24CCA7;
+}
+
+.transactionCardFalse {
+    border-left: 5px solid #FF6596;
+}
+
+.emptyTransaction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyTransactionText{
+  margin-top: 30px;
+  font-family: var(--mainFont);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #BDBDBD;
+  text-align: center;
+}
+
+.emptyTransaction_wraper {
+  // background-color: yellow;
+  height: 100%;
+  margin-top: 240px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 40px;
+  }
+
+  @media screen and (max-width: 769px) {
+    margin-top: 35px;
+  }
+}
+
+.transactionCard_value {
+  font-family: var(--mainFont);
+  font-weight: 400; 
+  font-size: 16px;
+}
+
+// #scrollableDiv {
+//   height: 50px;
+// }

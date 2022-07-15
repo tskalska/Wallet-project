@@ -1,0 +1,13 @@
+//TEST
+
+.testStyleMainFont{
+  font-family: var(--mainFont);
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.testStyleAdditionalFont{
+  font-family: var(--additionalFont);
+  font-weight: 400;
+  font-size: 24px;
+}

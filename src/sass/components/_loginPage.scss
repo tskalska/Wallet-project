@@ -1,0 +1,174 @@
+.loginPageIMGContainer {
+    display: none;
+    width: 100%;
+    min-width: 280px;
+}
+
+@media screen and (min-width: 768px) {
+    .loginPageContainer {
+        background-image: url(/public/image/table/BackGroudEllipseBlueTable@1x.png),
+        url(/public/image/table/BackGroudEllipsePinkTable@1x.png);
+        background-size: 510px auto,
+            365px auto;
+        background-position: bottom,
+            top;
+        background-position-x: 0%,
+            100%;
+        background-position-y: 100%,
+            0%;
+        background-repeat: no-repeat;
+        background-color: #E7EAF2;
+    }
+    .loginPageWraper {
+        padding-top: 60px;
+    }
+    .RegisterPageWraper {
+        padding-top: 60px;
+    }
+    .loginPageIMGContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 45px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 533px;
+    }
+    .loginPageText {
+        margin-left: 40px;
+        font-family: var(--mainFont);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 1.5;
+    }
+    .loginPageFormContainer {
+        position: relative;
+        height: 470px;
+        width: 540px;
+    }
+
+    .RegisterPageFormContainer {
+        position: relative;
+        height: 620px;
+        width: 540px;
+    }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+screen and (min-resolution: 192dpi) and (min-width: 768px),
+screen and (min-resolution: 2dppx) and (min-width: 768px) {
+    
+    .loginPageContainer {
+        background-image: url(/public/image/table/BackGroudEllipseBlueTable@2x.png),
+            url(/public/image/table/BackGroudEllipsePinkTable@2x.png);
+        background-size: 510px auto,
+            365px auto;
+        background-position: bottom,
+            top;
+        background-position-x: 0%,
+            100%;
+        background-position-y: 100%,
+            0%;
+        background-repeat: no-repeat;
+        background-color: #E7EAF2;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .loginPageContainer {
+        min-height: 1024px;
+    }
+    
+    .loginPageFormContainer {
+        margin: auto;
+    }
+    .RegisterPageFormContainer {
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .loginPageContainer {
+        height: 100vh;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-image: url(/public/image/desktop/BackGroudEllipseBlueDesktop@1x.png),
+        url(/public/image/desktop/BackGroudEllipsePinkDesktop@1x.png);
+        background-size: 490px auto,
+            550px auto;
+        background-position: bottom,
+            top, ;
+        background-position-x: 0%,
+            100%;
+        background-position-y: 100%,
+            0%;
+        background-repeat: no-repeat;
+        background-color: #E7EAF2;
+
+    }
+
+    .loginPageBluredContainer {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 55%;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(50px);
+        z-index:0;
+
+    }
+    .loginPageWraper {
+        display: flex;
+        padding-top: 0px;
+        
+    }
+    .RegisterPageWraper {
+        display: flex;
+        padding-top: 0px;
+    }
+
+    .loginPageIMGContainer {
+        display: block;
+        margin: auto;
+        padding-left: 60px;
+        z-index:99;
+    }
+
+    .loginPageFormContainer {
+        position: relative;
+        height: 100vh;
+        width: 650px;
+        margin-left: 40px;
+    }
+
+    .RegisterPageFormContainer {
+        position: relative;
+        height: 100vh;
+        width: 650px;
+        margin-left: 40px;
+    }
+
+    .loginPageText {
+        padding-left: 120px;
+    }
+
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
+screen and (min-resolution: 192dpi) and (min-width: 1280px),
+screen and (min-resolution: 2dppx) and (min-width: 1280px) {
+    .loginPageContainer {
+        background-image: url(/public/image/table/BackGroudEllipseBlueTable@2x.png),
+            url(/public/image/table/BackGroudEllipsePinkTable@2x.png);
+        background-size: 510px auto,
+            365px auto;
+        background-position: bottom,
+            top;
+        background-position-x: 0%,
+            100%;
+        background-position-y: 100%,
+            0%;
+        background-repeat: no-repeat;
+        background-color: #E7EAF2;
+    }
+}

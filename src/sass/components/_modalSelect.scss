@@ -1,0 +1,55 @@
+.ModalSelect{
+    position: absolute;
+    left: 0;
+    top: -10px;
+    z-index: 200;
+    width: 100%;
+    font-size: 18px;
+   
+}
+
+#select-button {
+    position: relative;
+    height: 16px;
+    padding: 12px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+        border: none;
+        width: 100%;
+}
+
+#options-view-button {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 100;
+}
+.ModalSelect__selected{ height: 100%;
+    padding-top: 3px;
+    display: inline-block;
+    width: 100%;}
+   
+
+#selected-value {
+    position: absolute;
+    left: -2px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    line-height: 1;
+    margin-right: 26px;
+    color: var(--grayFour); background-image: url('/src/img/icons/select-arrow.svg');
+    background-position: top 5px right 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-width: 282px;
+                border-bottom: 1px solid var(--grayFour);
+}

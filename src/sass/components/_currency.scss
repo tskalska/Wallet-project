@@ -1,0 +1,119 @@
+.tableCurrencyContainer{
+    position: relative;
+}
+
+.tableCurrency{
+    padding: 10px 20px 10px;
+    width: 280px;
+    height: 174px;
+
+    font-family: var(--additionalFont);
+    color:var(--white);
+    
+    background-color: var(--accentBlueColor);
+    background-image: url(/public/image/mobile/currency_background_mount_mobile@1x.png),
+    url(/public/image/mobile/currency_backgroud_head_mobile@1x.png);
+   background-size: auto 96px,
+    auto 50px; 
+    background-repeat: no-repeat;
+    background-position: bottom,
+    top;
+    
+    border-radius: 30px;
+
+     @media screen and (max-width: 767px) {
+         margin-left: auto;
+         margin-right: auto;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        width: 336px;
+        height: 182px;
+
+        background-image: url(/public/image/table/currency_background_mount_table@1x.png),
+        url(/public/image/table/currency_backgroud_head_table@1x.png);
+        background-size: auto 120px,
+        auto 50px;          
+    }
+    
+    @media screen and (min-width: 1280px) {
+        padding: 15px 20px 134px;
+
+        width: 393px;
+        height: 347px;
+
+        background-image: url(/public/image/desktop/currency_background_mount_desktop@1x.png),
+        url(/public/image/desktop/currency_backgroud_head_desktop@1x.png);
+        background-size: auto 134px,
+        auto 60px;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        @media screen and (max-width: 767px) {
+            background-image: url(/public/image/mobile/currency_background_mount_mobile@2x.png),
+            url(/public/image/mobile/currency_backgroud_head_mobile@2x.png);
+            background-size: auto 96px,
+            auto 50px;
+
+        }
+    
+        @media screen and (min-width: 768px) {
+            background-image: url(/public/image/table/currency_background_mount_table@2x.png),
+            url(/public/image/table/currency_backgroud_head_table@2x.png);
+            background-size: auto 115px,
+            auto 46px;
+        }
+    
+        @media screen and (min-width: 1200px) {
+            background-image: url(/public/image/desktop/currency_background_mount_desktop@2x.png),
+            url(/public/image/desktop/currency_backgroud_head_desktop@2x.png);
+            background-size: auto 134px,
+            auto 60px;
+        }
+    }
+}
+
+.tableCurrencyHead{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.tableCurrencyHeadItem{
+padding-bottom: 10px;
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {}
+
+@media screen and (min-width: 1280px) {
+    padding-bottom: 30px;
+}
+}
+
+.tableCurrencyBody{
+    position: relative;
+
+    font-size: 16px;
+    line-height: 1.5;       
+}
+
+.tableCurrencyItemLeft {
+text-align: left;
+
+ @media screen and (min-width: 1280px) {
+     text-align: center;
+}
+}
+
+.tableCurrencyItemCenter {
+text-align: center;
+}
+
+.tableCurrencyItemRight {
+text-align: right;
+
+@media screen and (min-width: 1280px) {
+    text-align: center;
+}
+}

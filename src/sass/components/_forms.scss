@@ -1,0 +1,153 @@
+.formComponentLog {
+  /* This styles were added by Olha Dolzhenko for right element positioning*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .formComponentLog {
+    width: 535px;
+    height: 470px;
+    border-radius: 20px;
+    background-color: var(--white);
+  }
+}
+
+.formComponentReg {
+  /* This styles were added by Olha Dolzhenko for right element positioning*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .formComponentReg {
+    width: 535px;
+    height: 616px;
+    border-radius: 20px;
+    background-color: var(--white);
+  }
+}
+
+.logoForm {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form {
+  margin-top: 30px;
+}
+
+.input {
+  position: relative;
+}
+
+.inputError:not(:first-child) {
+  margin-top: 40px;
+}
+
+.formField {
+  width: 280px;
+  height: 32px;
+  padding-left: 55px;
+
+  border: none;
+  border-bottom: 1px solid var(--grayFive);
+  outline: none;
+
+  font-family: var(--additionalFont);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--black);
+    -webkit-box-shadow: 0 0 0px 1000px var(--white) inset;
+    box-shadow: 0 0 0px 1000px var(--white) inset;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .formField {
+    width: 410px;
+  }
+}
+
+.formField::placeholder {
+  font-family: var(--additionalFont);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--grayFour);
+}
+
+.formImg {
+  position: absolute;
+}
+
+//tooltips
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 280px;
+  background-color: var(--accentGreenColor);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  top: 100%;
+  left: 50%;
+  margin-left: -140px;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.progressForm {
+  margin-top: 5px;
+  width: 280px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .progressForm {
+    width: 410px;
+  }
+}

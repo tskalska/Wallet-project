@@ -1,0 +1,19 @@
+.textErrorForm {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 280px;
+
+  font-family: var(--additionalFont);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+
+  color: var(--accentRoseColor);
+}
+@media screen and (min-width: 768px) {
+  .textErrorForm {
+    width: 410px;
+  }
+}

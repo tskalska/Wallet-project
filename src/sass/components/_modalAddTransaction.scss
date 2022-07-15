@@ -1,0 +1,134 @@
+// MODAL GENERAL
+.ModalAddTransaction {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--additionalFont);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  background-color: var(--white);
+  position: absolute;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.Modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.Modal__controllers {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+.Modal__controllers > button {
+  border-radius: 20px;
+  width: 300px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 0;
+}
+
+.Modal__add {
+  background-color: var(--accentGreenColor);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.Modal__cancel {
+  color: var(--accentBlueColor);
+  border: 1px solid var(--accentBlueColor);
+  background-color: transparent;
+}
+
+.Modal__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Modal__body > * {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.Modal__heading {
+  font-family: var(--mainFont);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+.Modal__form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+// MEDIA RULES
+
+@media screen and (max-width: 767.99px) {
+  .ModalAddTransaction {
+    height: 100%;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    padding: 20px 20px 50px 20px;
+  }
+
+  .Modal__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Modal__close {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.99px) {
+}
+
+@media screen and (min-width: 768px) {
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 100;
+  }
+  .ModalAddTransaction {
+    width: 540px;
+    height: 603px;
+    border-radius: 20px;
+    padding: 40px 73px 60px 73px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+//disabled
+button:disabled,
+button[disabled] {
+  background-color: #c5baff;
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    transform: scale(1);
+  }
+}

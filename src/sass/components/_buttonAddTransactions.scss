@@ -1,0 +1,28 @@
+.ButtonAdd {
+  background-color: var(--accentGreenColor);
+  height: 44px;
+  width: 44px;
+  position: fixed;
+  border-radius: 50%;
+  box-shadow: var(--buttonGreenShadow);
+}
+
+@media screen and (max-width: 767.99px) {
+  .ButtonAdd {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ButtonAdd {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279.99px) {
+}
+
+@media screen and (min-width: 1280px) {
+}

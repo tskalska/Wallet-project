@@ -1,0 +1,260 @@
+.ModalSelectOption,
+.ModalSelectOption__label {
+  color: var(--black);
+  font-size: 18px;
+}
+
+.options {
+  position: absolute;
+  left: 0;
+}
+
+#options {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(50px);
+  margin: 0;
+  border: none;
+  z-index: 400;
+  opacity: 1;
+  box-shadow: var(--selectShadow);
+}
+
+.ModalSelectOption {
+  position: relative;
+  top: 0;
+  line-height: 0.9;
+  transition: 0.3s ease all;
+  z-index: 2;
+}
+
+.ModalSelectOption i {
+  position: absolute;
+  left: 14px;
+  padding: 0;
+  display: none;
+}
+
+.ModalSelectOption__label {
+  display: none;
+  padding: 0;
+  padding-left: 20px;
+}
+
+#options-view-button:checked ~ #options .ModalSelectOption__label {
+  display: block;
+  padding: 12px 14px;
+}
+
+.ModalSelectOption__s-c {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
+
+.ModalSelectOption__s-c.ModalSelectOption__top {
+  top: 0;
+}
+
+.ModalSelectOption__s-c.ModalSelectOption__bottom {
+  bottom: 0;
+}
+
+input[type='radio'] {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ModalSelectOption__s-c:hover ~ i {
+  color: #fff;
+  opacity: 0;
+}
+
+.ModalSelectOption__s-c:hover {
+  height: 100%;
+  z-index: 1;
+}
+
+.ModalSelectOption__s-c.ModalSelectOption__bottom:hover + i {
+  bottom: -25px;
+  animation: moveup 0.3s ease 0.1s forwards;
+}
+
+.ModalSelectOption__s-c.ModalSelectOption__top:hover ~ i {
+  top: -25px;
+  animation: movedown 0.3s ease 0.1s forwards;
+}
+
+@keyframes moveup {
+  0% {
+    bottom: -25px;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes movedown {
+  0% {
+    top: -25px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.ModalSelectOption__label {
+  transition: 0.3s ease all;
+}
+
+.ModalSelectOption__opt-val {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  font-size: 18px;
+  width: 217px;
+  height: 21px;
+  opacity: 0;
+  background-color: transparent;
+  transform: scale(0);
+}
+
+.ModalSelectOption input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  opacity: 1;
+  transform: scale(1);
+  // background-color: #fff;
+}
+
+.ModalSelectOption input[type='radio']:checked #options {
+  opacity: 0;
+  transform: scale(1);
+}
+
+.income input[type='radio']:checked ~ .ModalSelectOption__label {
+  color: var(--accentGreenColor);
+  background-color: var(--white);
+}
+
+.spending input[type='radio']:checked ~ .ModalSelectOption__label {
+  color: var(--accentRoseColor);
+  background-color: var(--white);
+}
+
+.ModalSelectOption:nth-child(1) input[type='radio']:checked ~ .ModalSelectOption__label {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.ModalSelectOption:last-child input[type='radio']:checked ~ .ModalSelectOption__label {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.ModalSelectOption input[type='radio']:checked .ModalSelectOption {
+  background-color: var(--white);
+}
+
+.ModalSelectOption input[type='radio']:checked .ModalSelectOption {
+  background-color: var(--white);
+}
+
+.ModalSelectOption input[type='radio']:checked ~ .ModalSelectOption__label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#options-view-button:not(:checked)
+  ~ #options
+  .ModalSelectOption
+  input[type='radio']:checked
+  ~ .ModalSelectOption__opt-val {
+  top: -32px;
+}
+
+.ModalSelectOption:nth-child(1) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -34px;
+}
+
+.ModalSelectOption:nth-child(2) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -74px;
+}
+
+.ModalSelectOption:nth-child(3) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -115px;
+}
+
+.ModalSelectOption:nth-child(4) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -155px;
+}
+
+.ModalSelectOption:nth-child(5) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -195px;
+}
+
+.ModalSelectOption:nth-child(6) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -235px;
+}
+
+.ModalSelectOption:nth-child(7) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -276px;
+}
+
+.ModalSelectOption:nth-child(8) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -316px;
+}
+
+.ModalSelectOption:nth-child(9) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -356px;
+}
+
+.ModalSelectOption:nth-child(10) input[type='radio']:checked ~ .ModalSelectOption__opt-val {
+  top: -396px;
+}
+
+#options-view-button:checked ~ #options #option-bg {
+  display: block;
+}
+
+.income:hover .ModalSelectOption__label {
+  background: var(--white);
+  color: var(--accentGreenColor);
+}
+
+.spending:hover .ModalSelectOption__label {
+  background: var(--white);
+  color: var(--accentRoseColor);
+}
+
+.ModalSelectOption:nth-child(1):hover .ModalSelectOption__label {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.ModalSelectOption:last-child:hover .ModalSelectOption__label {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

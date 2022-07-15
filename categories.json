@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57dc"
+  },
+  "type": "spending",
+  "nameDropdown": "Основной",
+  "nameStatistics": "Основные расходы"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57dd"
+  },
+  "type": "spending",
+  "nameDropdown": "Еда",
+  "nameStatistics": "Продукты"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57de"
+  },
+  "type": "spending",
+  "nameDropdown": "Авто",
+  "nameStatistics": "Машина"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57df"
+  },
+  "type": "spending",
+  "nameDropdown": "Развитие",
+  "nameStatistics": "Забота о себе"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e0"
+  },
+  "type": "spending",
+  "nameDropdown": "Дети",
+  "nameStatistics": "Забота о детях"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e1"
+  },
+  "type": "spending",
+  "nameDropdown": "Дом",
+  "nameStatistics": "Товары для дома"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e2"
+  },
+  "type": "spending",
+  "nameDropdown": "Образование",
+  "nameStatistics": "Образование"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e3"
+  },
+  "type": "spending",
+  "nameDropdown": "Досуг",
+  "nameStatistics": "Досуг"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e4"
+  },
+  "type": "spending",
+  "nameDropdown": "Остальное",
+  "nameStatistics": "Другие расходы"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e5"
+  },
+  "type": "income",
+  "nameDropdown": "Регулярный",
+  "nameStatistics": "Регулярный доход"
+},{
+  "_id": {
+    "$oid": "6249d8479ba6d9bc487c57e6"
+  },
+  "type": "income",
+  "nameDropdown": "Нерегулярный",
+  "nameStatistics": "Нерегулярный доход"
+}]

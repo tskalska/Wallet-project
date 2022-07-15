@@ -1,0 +1,61 @@
+.header{
+        display: flex;
+        justify-content:space-between;
+        align-items:center;
+        height: 80px;
+        background-color: #fff;
+
+        @media screen and (max-width: 768px) {
+                height: 60px;
+
+        }      
+}
+
+
+.headerLogoutWrap{
+        display: flex;
+        font-family: var(--additionalFont);
+        font-size: 18px;
+        line-height: 1.5;
+                
+        color: var(--grayFour);
+}
+
+.headerUserName{
+        @media screen and (min-width: 768px) {
+        padding-right: 12px;
+        border-right: 1px solid var(--grayFour);
+        }
+}
+
+.headerLogoutButton{
+        display: flex;
+        align-items: center;
+
+        font-family: var(--additionalFont);
+        font-size: 18px;
+        line-height: 1.5;
+                
+        color: var(--grayFour);
+        background-color: var(--white);
+}
+
+.headerLogoutImg{
+        margin: 0px 0px 0px 8px;
+
+        width: 18px;
+        height: 18px;
+
+        cursor: pointer;
+
+        @media screen and (min-width: 768px) {
+                margin-right: 12px;
+                margin-left: 12px;
+        }
+}
+
+.headerLogout{
+       @media screen and (max-width: 767px) {
+               display: none;
+       }
+}
