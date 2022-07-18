@@ -16,16 +16,17 @@ export default function HomeTab() {
   const dispatch = useDispatch();
   const transactions = useSelector(state => state.transactions.data);
   const loading = useSelector(isLoading);
-  const [page, setPage] = useState(1);
-
+  const page = useSelector(state => state.transactions.page);
   const pageRef = useRef();
 
   useEffect(() => {
-    if (pageRef.current === page) {
+    // should dispatch only when component renders very first time
+    // (subsequest dispatching will be handled in infinit scroll next callback)
+    if (page !== 0 || pageRef.current === page) {
       return;
     }
     dispatch(fetchTransactions(page));
-  }, [dispatch, page]);
+  }, [dispatch]);
 
   useEffect(() => {
     pageRef.current = page;
@@ -56,8 +57,8 @@ export default function HomeTab() {
           <InfiniteScroll 
               height={355}
               dataLength={transactions.length}
-              // next={()=> dispatch(fetchTransactions())}
-              next={()=> setPage(page+1)}
+              next={()=> dispatch(fetchTransactions(page))}
+              // next={()=> setPage(page+1)}
               hasMore={true}
               // loader={<h4>Loading more 2 itens...</h4>}
           >

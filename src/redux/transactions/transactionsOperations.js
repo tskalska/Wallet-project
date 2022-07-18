@@ -21,7 +21,7 @@ const toastSuccess = successMessage => {
 
 export const fetchTransactions = createAsyncThunk(
   'transactions/fetchTransactions',
-  async (page) => {
+  async page => {
     try {
       // const { data } = await axios.get(`/transactions`);
 
@@ -29,11 +29,17 @@ export const fetchTransactions = createAsyncThunk(
       const { data } = await axios.get('/transactions', {
         params: {
           tasksPerPage: 6,
-          pageToSkip: page-1
+          pageToSkip: page
         }
       });
 
-      return data.data.transactions;
+      let newPage = page;
+
+      if (data.data.transactions.length) {
+        newPage++;
+      }
+      
+      return {transactions: data.data.transactions, newPage};
     } catch (error) {
       alert('Your session has timed out. Please login again!');
     }

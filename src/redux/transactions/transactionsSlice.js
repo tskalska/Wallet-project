@@ -4,10 +4,15 @@ import { addTransaction } from "./transactionsOperations";
 
 const transactionsSlice = createSlice({
   name: "transactions",
-  initialState: { data: [], isLoading: false, error: false },
+  initialState: { data: [], isLoading: false, error: false, page: 0},
   extraReducers: {
     [fetchTransactions.fulfilled]: (state, { payload }) => {
-      return { ...state, isLoading: false, data: [...state.data, ...payload ]};
+      return {
+        ...state,
+        isLoading: false,
+        data: [...state.data, ...payload.transactions],
+        page: payload.newPage
+      };
     },
     [fetchTransactions.pending]: (state) => {
       return { ...state, isLoading: true };
