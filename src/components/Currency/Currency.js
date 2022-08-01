@@ -27,9 +27,9 @@ function Currency() {
       <table className="tableCurrency">
         <thead className="tableCurrencyHead">
           <tr>
-            <th className="tableCurrencyHeadItem tableItemLeft">Валюта</th>
-            <th className="tableCurrencyHeadItem">Покупка</th>
-            <th className="tableCurrencyHeadItem tableItemRight">Продажа</th>
+            <th className="tableCurrencyHeadItem tableItemLeft">Сurrency</th>
+            <th className="tableCurrencyHeadItem">Buy</th>
+            <th className="tableCurrencyHeadItem tableItemRight">Sell</th>
           </tr>
         </thead>
 

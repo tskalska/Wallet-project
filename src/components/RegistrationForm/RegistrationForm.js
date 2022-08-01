@@ -33,30 +33,30 @@ export default function RegisterForm() {
   const validationSchema = yup.object().shape({
     email: yup
       .string()
-      .email("Введите Ваш email корректно.")
-      .required("Обязательное поле. Введите Ваш email."),
+      .email("Please enter your email address correctly.")
+      .required("Required field. Enter your email."),
     password: yup
       .string()
-      .min(6, "Введите минимум 6 символов.")
-      .max(12, "Введите максимум 12 символов.")
+      .min(6, "Please enter at least 6 characters.")
+      .max(12, "Enter a maximum of 12 characters.")
       .matches(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,}/,
-        "Пароль не соответсвует требованям безопасности."
+        "The password does not meet security requirements."
       )
-      .required("Обязательное поле. Введите Ваш пароль."),
+      .required("Required field. Enter your password."),
     confirmPassword: yup
       .string()
-      .oneOf([yup.ref("password")], "Пароли не совпадают.")
-      .required("Обязательное поле. Повторите пароль."),
+      .oneOf([yup.ref("password")], "Passwords do not match.")
+      .required("Required field. Repeat password."),
     name: yup
       .string()
       .matches(
         /^[a-zA-Zа-яА-Я-А-Яа-яёЁЇїІіЄєҐґ]+(([' -][a-zA-Zа-яА-Я-А-Яа-яёЁЇїІіЄєҐґ ])?[a-zA-Zа-яА-Я-А-Яа-яёЁЇїІіЄєҐґ]*)*$/,
-        "Введите только буквы."
+        "Enter only letters."
       )
-      .min(1, "Обязательное поле. Введите Ваше имя.")
-      .max(12, "Введите максимум 12 символов.")
-      .required("Обязательное поле. Введите Ваше имя."),
+      .min(1, "Required field. Enter your name.")
+      .max(12, "Enter a maximum of 12 characters.")
+      .required("Required field. Enter your name."),
   });
 
   const onSubmit = (values, { setSubmitting, resetForm }) => {
@@ -117,7 +117,7 @@ export default function RegisterForm() {
                       name="password"
                       id="password"
                       value={values.password}
-                      placeholder="Пароль"
+                      placeholder="Password"
                       className="formField"
                       onBlur={(e) => {
                         progressFunc(values);
@@ -144,7 +144,7 @@ export default function RegisterForm() {
                       name="confirmPassword"
                       id="confirmPassword"
                       value={values.confirmPassword}
-                      placeholder="Подтвердите пароль"
+                      placeholder="Confirm the password"
                       className="formField"
                       onBlur={(e) => {
                         progressFunc(values);
@@ -174,7 +174,7 @@ export default function RegisterForm() {
                       name="name"
                       id="name"
                       value={values.name}
-                      placeholder="Ваше имя"
+                      placeholder="Your Name"
                       className="formField"
                       onBlur={(e) => {
                         progressFunc(values);
@@ -184,8 +184,8 @@ export default function RegisterForm() {
                   </div>
                   <ErrorMessage name="name" component={TextError} />
                 </div>
-                <Button bottomTitle={"регистрация"} disabled={!isValid} />
-                <ButtonLink bottomTitle={"вход"} link={"/login"} />
+                <Button bottomTitle={"Create account"} disabled={!isValid} />
+                <ButtonLink bottomTitle={"Sign in"} link={"/login"} />
               </Form>
             </div>
           );

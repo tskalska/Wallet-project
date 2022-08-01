@@ -14,14 +14,14 @@ function ModalForm({ closeModal }) {
   const dispatch = useDispatch();
 
   const [income, setIncome] = useState(false);
-  const [currentCategory, setCurrentCategory] = useState("null");
+  const [currentCategory, setCurrentCategory] = useState({id: 'null', name: null});
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get("https://pure-atoll-67904.herokuapp.com/api/transactions/categories")
+      .get("transactions/categories")
       .then((results) => setCategories(results.data))
       .catch((error) => console.log(error.message))
       .finally(() => setIsLoading(false));
@@ -32,7 +32,7 @@ function ModalForm({ closeModal }) {
   const mm = String(today.getMonth() + 1).padStart(2, "0");
   const yyyy = today.getFullYear();
 
-  today = mm + "." + dd + "." + yyyy;
+  console.log(currentCategory.id);
 
   const handleFormatting = (e) => {
     e.target.value = e.target.value
@@ -43,7 +43,7 @@ function ModalForm({ closeModal }) {
 
   const initialValues = {
     income: income,
-    category: currentCategory,
+    category: currentCategory.id,
     amount: "",
     date: today,
     comment: "",
@@ -51,15 +51,15 @@ function ModalForm({ closeModal }) {
 
   const validate = Yup.object().shape({
     income: Yup.boolean(),
-    category: Yup.string().required("Выберите категорию"),
+    category: Yup.string().required("Choose a category"),
     amount: Yup.string()
       .matches(
         /^[0-9][0-9]*[./,]?[0-9]{0,2}$/,
-        "Введите только цифры, допускается две цифры после запятой"
+        "Please enter only numbers, two decimal places are allowed"
       )
-      .required("Укажите сумму"),
+      .required("Specify the amount"),
     date: Yup.date().default(() => new Date()),
-    comment: Yup.string().max(15, "Комментарий не должен превышать 12 знаков"),
+    comment: Yup.string().max(15, "Comments must not exceed 12 characters"),
   });
 
   const handleSubmit = (values, { resetForm, setSubmitting }) => {
@@ -72,17 +72,21 @@ function ModalForm({ closeModal }) {
       }
     };
 
+    console.log(Yup.date());
+
+    const categoryToState = categories.find(c=>c._id===currentCategory.id);
     const currentComment = checkComment(comment);
     const modifiedAmount = amount.split(",").join(".");
 
-    const object = {
+
+    const transaction = {
       income,
-      category: currentCategory,
+      category: currentCategory.id,
       amount: modifiedAmount,
       date,
       comment: currentComment,
     };
-    dispatch(addTransaction(object));
+    dispatch(addTransaction({transaction, categoryToState}));
     setSubmitting(false);
     closeModal();
     resetForm();
@@ -97,7 +101,7 @@ function ModalForm({ closeModal }) {
             color: income ? "var(--accentGreenColor)" : "var(--grayFive)",
           }}
         >
-          Доход
+          Income
         </span>
         <div className="ModalForm__switcher-control">
           <input
@@ -122,7 +126,7 @@ function ModalForm({ closeModal }) {
             color: income ? "var(--grayFive)" : "var(--accentRoseColor)",
           }}
         >
-          Расход
+          Expenses
         </span>
       </div>
 
@@ -141,13 +145,13 @@ function ModalForm({ closeModal }) {
                 <Field
                   name="category"
                   className="hidden-select"
-                  value={currentCategory}
+                  value={currentCategory.id}
                 ></Field>
                 <ModalSelect
                   income={income}
                   categories={categories}
                   setCategory={setCurrentCategory}
-                  currentCategory={currentCategory}
+                  currentCategory={currentCategory.id}
                 />
                 <ErrorMessage
                   component={TextError}
@@ -167,14 +171,14 @@ function ModalForm({ closeModal }) {
                 />
               </span>
 
-              <span className="Modal__date">{today}</span>
+              <span className="Modal__date">{`${dd}.${mm}.${yyyy}`}</span>
             </div>
             <ErrorMessage name="amount" component={TextError} />
 
             <Field
               as="textarea"
               type="text"
-              placeholder="Комментарий"
+              placeholder="Comment"
               className="Modal__input Modal__comment"
               name="comment"
             />
@@ -190,14 +194,14 @@ function ModalForm({ closeModal }) {
                 className="Modal__add"
                 disabled={!formik.isValid}
               >
-                Добавить
+                Add
               </button>
               <button
                 onClick={() => closeModal()}
                 className="Modal__cancel"
                 type="button"
               >
-                Отмена
+                Cancel
               </button>
             </div>
           </Form>

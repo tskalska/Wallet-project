@@ -27,9 +27,9 @@ export default function LoginForm() {
   const validationSchema = yup.object().shape({
     email: yup
       .string()
-      .email("Введите Ваш email корректно.")
-      .required("Обязательное поле. Введите, Ваш email."),
-    password: yup.string().required("Обязательное поле. Введите Ваш пароль."),
+      .email("Enter your email correctly.")
+      .required("Required field. Enter your email."),
+    password: yup.string().required("Required field. Enter your password."),
   });
 
   const onSubmit = (values, { setSubmitting, resetForm }) => {
@@ -87,14 +87,14 @@ export default function LoginForm() {
                       name="password"
                       id="password"
                       value={values.password}
-                      placeholder="Пароль"
+                      placeholder="Password"
                       className="formField"
                     />
                   </div>
                   <ErrorMessage name="password" component={TextError} />
                 </div>
-                <Button bottomTitle={"вход"} disabled={!isValid} />
-                <ButtonLink bottomTitle={"регистрация"} link={"/register"} />
+                <Button bottomTitle={"Sign in"} disabled={!isValid} />
+                <ButtonLink bottomTitle={"Create account"} link={"/register"} />
               </Form>
             </div>
           );

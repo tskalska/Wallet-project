@@ -16,20 +16,20 @@ export default function HomeTab() {
   const dispatch = useDispatch();
   const transactions = useSelector(state => state.transactions.data);
   const loading = useSelector(isLoading);
-  const page = useSelector(state => state.transactions.page);
-  const pageRef = useRef();
+  // const page = useSelector(state => state.transactions.page);
+  const transactionsLengthRef = useRef();
 
   useEffect(() => {
     // should dispatch only when component renders very first time
     // (subsequest dispatching will be handled in infinit scroll next callback)
-    if (page !== 0 || pageRef.current === page) {
+    if (transactions.length === 6 || transactionsLengthRef.current === transactions.length) {
       return;
     }
-    dispatch(fetchTransactions(page));
+    dispatch(fetchTransactions(transactions.length));
   }, [dispatch]);
-
+  
   useEffect(() => {
-    pageRef.current = page;
+    transactionsLengthRef.current = transactions.length ;
   });
   
   return (
@@ -46,7 +46,7 @@ export default function HomeTab() {
               className="emptyTransaction-icon"
             />
             <p className="emptyTransactionText">
-              У вас еще нет доходов и расходов...
+            You don't have any income or expenses yet...
             </p>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function HomeTab() {
           <InfiniteScroll 
               height={355}
               dataLength={transactions.length}
-              next={()=> dispatch(fetchTransactions(page))}
+              next={()=> dispatch(fetchTransactions(transactions.length))}
               // next={()=> setPage(page+1)}
               hasMore={true}
               // loader={<h4>Loading more 2 itens...</h4>}
@@ -66,12 +66,12 @@ export default function HomeTab() {
           <table className="tableContainer mobilehidden" >
             <tbody > 
               <tr className="tableHeader" >
-                  <th className="tabelHeader_item">Дата</th>
-                  <th className="tabelHeader_item">Тип</th>
-                  <th className="tabelHeader_item">Категория</th>
-                  <th className="tabelHeader_item">Комментарий</th>
-                  <th className="tabelHeader_item">Сумма</th>
-                  <th className="tabelHeader_item">Баланс</th>
+                  <th className="tabelHeader_item">Date</th>
+                  <th className="tabelHeader_item">Type</th>
+                  <th className="tabelHeader_item">Category</th>
+                  <th className="tabelHeader_item">Comment</th>
+                  <th className="tabelHeader_item">Sum</th>
+                  <th className="tabelHeader_item">Balance</th>
               </tr>
              
               {transactions.map(transaction => (
@@ -104,7 +104,7 @@ export default function HomeTab() {
                     {transaction.income === true && <span>+</span>}
                     {transaction.income === false && <span>-</span>}
                   </td>
-                  <td className="table_value">{transaction.category.nameStatistics}</td>
+                  <td className="table_value">{transaction.category.nameStatistics}{transaction.nameStatistics}</td>
                   <td className="table_value">{transaction.comment}</td>
                   <td
                     className={

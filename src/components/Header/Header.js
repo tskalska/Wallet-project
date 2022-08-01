@@ -32,7 +32,7 @@ function Header() {
             className="headerLogoutButton"
           >
             <LogoutIcon className="headerLogoutImg" />
-            <p className="headerLogout">Выйти</p>
+            <p className="headerLogout">Sign Out</p>
           </button>
           {showModal && <ModalLogout onClose={toggleModal} />}
         </div>

@@ -21,7 +21,7 @@ const toastSuccess = successMessage => {
 
 export const fetchTransactions = createAsyncThunk(
   'transactions/fetchTransactions',
-  async page => {
+  async (transactionsLength) => {
     try {
       // const { data } = await axios.get(`/transactions`);
 
@@ -29,17 +29,17 @@ export const fetchTransactions = createAsyncThunk(
       const { data } = await axios.get('/transactions', {
         params: {
           tasksPerPage: 6,
-          pageToSkip: page
+          transactionsToSkip: transactionsLength
         }
       });
 
-      let newPage = page;
+      // let newPage = page;
 
-      if (data.data.transactions.length) {
-        newPage++;
-      }
+      // if (data.data.transactions.length) {
+      //   newPage++;
+      // }
       
-      return {transactions: data.data.transactions, newPage};
+      return {transactions: data.data.transactions};
     } catch (error) {
       alert('Your session has timed out. Please login again!');
     }
@@ -62,11 +62,12 @@ export const fetchTransactions = createAsyncThunk(
 
 export const addTransaction = createAsyncThunk(
   'transactions/addTransaction',
-  async (transaction, { rejectWithValue }) => {
+  async (payload, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/transactions', transaction);
+      const { data } = await axios.post('/transactions', payload.transaction);
       toastSuccess('Транзакция добавлена!');
-      return data;
+      console.log(payload);
+      return {...data, nameStatistics: payload.categoryToState.nameStatistics, nameDropdown: payload.categoryToState.nameDropdown};
     } catch (error) {
       if (error.response.status === 404) {
         toastMessage('Упс... Что-то пошло не так');

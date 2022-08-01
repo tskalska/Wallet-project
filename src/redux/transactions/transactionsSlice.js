@@ -4,14 +4,14 @@ import { addTransaction } from "./transactionsOperations";
 
 const transactionsSlice = createSlice({
   name: "transactions",
-  initialState: { data: [], isLoading: false, error: false, page: 0},
+  initialState: { data: [], isLoading: false, error: false},
   extraReducers: {
     [fetchTransactions.fulfilled]: (state, { payload }) => {
       return {
         ...state,
         isLoading: false,
         data: [...state.data, ...payload.transactions],
-        page: payload.newPage
+        // page: payload.newPage
       };
     },
     [fetchTransactions.pending]: (state) => {
@@ -25,7 +25,7 @@ const transactionsSlice = createSlice({
       state.error = false;
     },
     [addTransaction.fulfilled](state, { payload }) {
-      state.data = [...state.data, payload];
+      state.data = [payload, ...state.data];
       state.isLoading = false;
       state.error = false;
     },

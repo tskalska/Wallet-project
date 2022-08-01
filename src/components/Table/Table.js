@@ -2,18 +2,18 @@ import React from "react";
 import "../../css/main.min.css";
 
 const months = [
-  { name: "Январь", id: 1 },
-  { name: "Февраль", id: 2 },
-  { name: "Март", id: 3 },
-  { name: "Апрель", id: 4 },
-  { name: "Май", id: 5 },
-  { name: "Июнь", id: 6 },
-  { name: "Июль", id: 7 },
-  { name: "Август", id: 8 },
-  { name: "Сентябрь", id: 9 },
-  { name: "Октябрь", id: 10 },
-  { name: "Ноябрь", id: 11 },
-  { name: "Декабрь", id: 12 },
+  { name: "January", id: 1 },
+  { name: "February", id: 2 },
+  { name: "March", id: 3 },
+  { name: "April", id: 4 },
+  { name: "May", id: 5 },
+  { name: "June", id: 6 },
+  { name: "July", id: 7 },
+  { name: "August", id: 8 },
+  { name: "September", id: 9 },
+  { name: "October", id: 10 },
+  { name: "November", id: 11 },
+  { name: "December", id: 12 },
 ];
 const years = [
   { name: "2022", id: 1 },
@@ -74,8 +74,8 @@ function Table({
       <table className="chart__table">
         <thead className="table__head">
           <tr>
-            <th>Категория</th>
-            <th>Сумма</th>
+            <th>Category</th>
+            <th>Sum</th>
           </tr>
         </thead>
         <tbody>
@@ -84,14 +84,14 @@ function Table({
               <td key={category}>{category}</td>
               <td key={categorySum}>{categorySum}</td>
             </tr>
-          ))) : <tr><td colSpan={"2"}>Нет транзакций за данный период</td></tr>}
+          ))) : <tr><td colSpan={"2"}>No transactions for this period</td></tr>}
         </tbody>
       </table>
       <p className="total__text">
-        Расходы: <span className="total__sum isFalse">{expenses !== null ? expenses.totalSum : "0.00"}</span>
+        Expenses: <span className="total__sum isFalse">{expenses !== null ? expenses.totalSum : "0.00"}</span>
       </p>
       <p className="total__text">
-        Доходы: <span className="total__sum isTrue">{expenses !== null ? income.totalSum : "0.00"}</span>
+        Income: <span className="total__sum isTrue">{expenses !== null ? income.totalSum : "0.00"}</span>
       </p>
     </div>
   );

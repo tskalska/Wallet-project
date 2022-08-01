@@ -24,7 +24,7 @@ function Navigation() {
               height="38px"
               alt="Иконка дома"
             />
-            <p className={ location.pathname === "/home" ? "navigationActiveLink navigationText":"navigationLink navigationText"}>Главная</p>
+            <p className={ location.pathname === "/home" ? "navigationActiveLink navigationText":"navigationLink navigationText"}>Home</p>
           </NavLink>
         </li>
 
@@ -39,7 +39,7 @@ function Navigation() {
               height="38px"
               alt="Иконка статистика"
             />
-            <p className={location.pathname === "/diagram" ? "navigationActiveLink navigationText" : "navigationLink navigationText"}>Статистика</p>
+            <p className={location.pathname === "/diagram" ? "navigationActiveLink navigationText" : "navigationLink navigationText"}>Statistics</p>
             
           </NavLink>
         </li>

@@ -37,7 +37,7 @@ function ModalAddTransaction({ isOpen }) {
       <div className="ModalAddTransaction">
         <CloseModal className="Modal__close" onClick={closeModal} />
         <div className="Modal__body">
-          <h2 className="Modal__heading">Добавить транзакцию</h2>
+          <h2 className="Modal__heading">Add transaction</h2>
 
           <ModalForm closeModal={closeModal} />
         </div>

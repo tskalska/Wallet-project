@@ -36,16 +36,16 @@ const ModalLogout = ({ onClose }) => {
   return createPortal(
     <div className="overlay" onClick={handleOverlayClick}>
       <div className="modal-logout">
-        <p className="modal-logout-text">Вы действительно хотите выйти?</p>
+        <p className="modal-logout-text">Do you really want to leave?</p>
         <ul className="btn-list">
           <li className="btn-item">
             <button className="btn-logout btn-yes" onClick={logout}>
-              Да, выйти
+              Yes, sign out
             </button>
           </li>
           <li className="btn-item">
             <button className="btn-logout btn-no" onClick={() => onClose()}>
-              Нет, остаться
+              No, stay
             </button>
           </li>
         </ul>

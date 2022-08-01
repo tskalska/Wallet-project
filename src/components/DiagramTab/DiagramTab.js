@@ -32,7 +32,7 @@ function DiagramTab() {
 
   return (
     <div className="diagram">
-      <p className="title">Статистика</p>
+      <p className="title">Statistics</p>
       {expenses.year ? (
         <div className="diagramTab">
           <Chart chartData={expenses} />

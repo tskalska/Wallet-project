@@ -30,7 +30,7 @@ function ModalSelect({ income, categories, setCategory, currentCategory }) {
               className="ModalSelect__selected"
               style={{ opacity: currentCategory === 'null' ? '1' : '0' }}
             >
-              Выберите категорию
+             Choose a category
             </span>
           </div>
         </div>

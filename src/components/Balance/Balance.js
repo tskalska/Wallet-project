@@ -10,7 +10,7 @@ function Balance() {
     return (
       <div className="balanceWrap balanceWrap_empty">
         <p className="balanceText_empty">
-          У вас еще нет ни одной транзакции! Баланс пустой
+          You don't have any transactions yet! Balance empty
         </p>
       </div>
     );
@@ -18,7 +18,7 @@ function Balance() {
     const balance = transactions[0].currentBalance;
     return (
       <div className="balanceWrap">
-        <p className="balanceTitle">Ваш баланс</p>
+        <p className="balanceTitle">Balance</p>
         <p className="balanceText">
           {"\u20B4"} {balance}{" "}
         </p>
