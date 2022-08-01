@@ -65,16 +65,16 @@ export const addTransaction = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/transactions', payload.transaction);
-      toastSuccess('Транзакция добавлена!');
+      toastSuccess('Transaction added!');
       console.log(payload);
       return {...data, nameStatistics: payload.categoryToState.nameStatistics, nameDropdown: payload.categoryToState.nameDropdown};
     } catch (error) {
       if (error.response.status === 404) {
-        toastMessage('Упс... Что-то пошло не так');
+        toastMessage('Oops... Something went wrong');
       } else if (error.response.status === 409) {
-        toastMessage('Недостаточно средств');
+        toastMessage('Not enough funds');
       } else if (error.response.status === 400) {
-        toastMessage('Неверно заполненная форма');
+        toastMessage('Incorrectly completed form');
       } else {
         console.log(error);
       }
