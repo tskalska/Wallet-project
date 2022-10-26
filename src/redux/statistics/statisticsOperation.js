@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = `http://localhost:3001/api`;
+axios.defaults.baseURL = `https://wallet-project-app.herokuapp.com/api`;
 
 const getStatistics = createAsyncThunk(
   "statistics/fetchStatistics",
