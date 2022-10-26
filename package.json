@@ -14,7 +14,7 @@
     "moment": "^2.29.2",
     "notiflix": "^3.2.5",
     "react": "^18.0.0",
-    "react-chartjs-2": "^4.0.1",
+    "react-chartjs-2": "^4.3.1",
     "react-datetime": "^3.1.1",
     "react-dom": "^18.0.0",
     "react-infinite-scroll-component": "^6.1.0",
@@ -40,6 +40,9 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "netlify deploy -p"
+  },
+  "engines": {
+    "npm": "8.1.2"
   },
   "eslintConfig": {
     "extends": [
