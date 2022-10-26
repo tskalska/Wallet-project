@@ -34,12 +34,12 @@ function ModalForm({ closeModal }) {
 
   console.log(currentCategory.id);
 
-  const handleFormatting = (e) => {
-    e.target.value = e.target.value
-      .replace(/\B(?=(\d{2})+(?!\d))/g, ".")
-      .replace(/[^0-9.]|\.(?=.*\.)/g, "")
-      .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  };
+  // const handleFormatting = (e) => {
+  //   e.target.value = e.target.value
+  //     .replace(/\B(?=(\d{2})+(?!\d))/g, ".")
+  //     .replace(/[^0-9.]|\.(?=.*\.)/g, "")
+  //     .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  // };
 
   const initialValues = {
     income: income,

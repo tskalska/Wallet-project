@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTransactions } from "../../redux/transactions/transactionsOperations";
 import "../../css/main.min.css";
@@ -26,7 +26,7 @@ export default function HomeTab() {
       return;
     }
     dispatch(fetchTransactions(transactions.length));
-  }, [dispatch]);
+  });
   
   useEffect(() => {
     transactionsLengthRef.current = transactions.length ;

@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
