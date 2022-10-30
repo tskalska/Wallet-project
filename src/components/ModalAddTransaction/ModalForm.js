@@ -32,15 +32,6 @@ function ModalForm({ closeModal }) {
   const mm = String(today.getMonth() + 1).padStart(2, "0");
   const yyyy = today.getFullYear();
 
-  console.log(currentCategory.id);
-
-  // const handleFormatting = (e) => {
-  //   e.target.value = e.target.value
-  //     .replace(/\B(?=(\d{2})+(?!\d))/g, ".")
-  //     .replace(/[^0-9.]|\.(?=.*\.)/g, "")
-  //     .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  // };
-
   const initialValues = {
     income: income,
     category: currentCategory.id,
@@ -71,8 +62,6 @@ function ModalForm({ closeModal }) {
         return text;
       }
     };
-
-    console.log(Yup.date());
 
     const categoryToState = categories.find(c=>c._id===currentCategory.id);
     const currentComment = checkComment(comment);

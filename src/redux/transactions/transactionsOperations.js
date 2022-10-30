@@ -45,27 +45,12 @@ export const fetchTransactions = createAsyncThunk(
   },
 );
 
-// export const fetchTransactions = createAsyncThunk(
-//   'transactions/fetchTransactions',
-//   async (_, thunkAPI, pageSize, page) => {
-//     try {
-//       const { data } = await axios.get('/transactions').limit(pageSize).skip(pageSize * page);
-//       console.log("тут")
-
-//       return data.data.transactions;
-//     } catch (error) {
-//       alert('Your session has timed out. Please login again!');
-//     }
-//   },
-// );
-
 export const addTransaction = createAsyncThunk(
   'transactions/addTransaction',
   async (payload, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/transactions', payload.transaction);
       toastSuccess('Transaction added!');
-      console.log(payload);
       return {...data, nameStatistics: payload.categoryToState.nameStatistics, nameDropdown: payload.categoryToState.nameDropdown};
     } catch (error) {
       if (error.response.status === 404) {

@@ -1,7 +1,6 @@
 function ModalSelectOption({ value, name, addClass, setCategory }) {
   const handleChange = e => {
     setCategory({id: e.target.value, name});
-    console.log(name);
   };
   return (
     <div className={`ModalSelectOption ${addClass}`}>
