@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-axios.defaults.baseURL = `https://wallet-project-app.herokuapp.com/api`;
+axios.defaults.baseURL = `https://wallet-coti.onrender.com/api`;
 
 toast.configure();
 const toastMessage = (errorMessage) => {
