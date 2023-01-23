@@ -8,7 +8,7 @@ function Currency() {
 
   useEffect(() => {
     // fetch('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11')
-    fetch('http://api.nbp.pl/api/exchangerates/tables/c/today')
+    fetch('https://api.nbp.pl/api/exchangerates/tables/c/today')
 
       .then(response => {
         // console.log (response.ok);
