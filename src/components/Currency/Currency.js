@@ -7,15 +7,20 @@ function Currency() {
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    fetch('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11')
+    // fetch('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11')
+    fetch('http://api.nbp.pl/api/exchangerates/tables/c/today')
+
       .then(response => {
+        // console.log (response.ok);
         if (response.ok) {
           return response.json();
         }
         return Promise.reject(new Error('ERROR'));
       })
       .then(data => {
-        const currency = data.filter(item => item.ccy !== 'RUR');
+        const c = data[0].rates;
+        // const currency = data[0].rate.filter(item => item.code === 'USD'||item.code === 'EUR'||item.code === 'GBP');
+        const currency = c.filter(item => ['USD', 'EUR', 'GBP'].includes(item.code));
         setCurrency(currency);
         setLoad(false);
       });
@@ -33,15 +38,17 @@ function Currency() {
           </tr>
         </thead>
 
-        <tbody className="tableCurrencyBody">
+        <tbody className="tableCurrencyBody"> 
           {currency.map(item => (
-            <tr key={item.ccy}>
-              <td className="tableCurrencyItemLeft ">{item.ccy}</td>
+            <tr key={item.code}>
+              <td className="tableCurrencyItemLeft ">{item.code}</td>
               <td className="tableCurrencyItemCenter">
-                {Math.round(parseFloat(item.buy) * 100) / 100}
+                {/* {item.bid} */}
+                {Math.round(parseFloat(item.bid) * 100) / 100}
               </td>
               <td className="tableCurrencyItemRight">
-                {Math.round(parseFloat(item.sale) * 100) / 100}
+                {Math.round(parseFloat(item.ask) * 100) / 100}
+                {/* {item.ask} */}
               </td>
             </tr>
           ))}
